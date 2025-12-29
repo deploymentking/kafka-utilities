@@ -67,3 +67,70 @@ The Dockerfile uses a multi-stage build process:
 1. Builder stage: Uses `golang:alpine` to install the Kafka utilities
 2. Final stage: Uses `alpine:latest` with curl, jq, and bash, copying only the compiled binaries
 
+## Automated Releases
+
+This repository uses [Semantic Release](https://semantic-release.gitbook.io/) with [Conventional Commits](https://www.conventionalcommits.org/) to automatically version and release Docker images.
+
+### How It Works
+
+1. **Commit with conventional format** to the `main` branch
+2. **GitHub Actions** automatically analyzes your commits
+3. **Semantic version** is determined based on commit types
+4. **Docker image** is built and pushed with version tags
+
+### Commit Format
+
+Use conventional commit messages to trigger releases:
+
+```
+<type>(<scope>): <subject>
+
+<body>
+
+<footer>
+```
+
+**Common types:**
+- `feat:` - New feature (triggers minor version bump, e.g., 1.0.0 → 1.1.0)
+- `fix:` - Bug fix (triggers patch version bump, e.g., 1.0.0 → 1.0.1)
+- `docs:` - Documentation changes (triggers patch version bump)
+- `refactor:` - Code refactoring (triggers patch version bump)
+- `perf:` - Performance improvements (triggers patch version bump)
+- `chore:` - Maintenance tasks (no release)
+- `ci:` - CI/CD changes (no release)
+- `test:` - Test changes (no release)
+
+**Breaking changes** (triggers major version bump, e.g., 1.0.0 → 2.0.0):
+```
+feat!: remove legacy API
+
+BREAKING CHANGE: The old API has been removed
+```
+
+### Examples
+
+```bash
+# Patch release (1.0.0 → 1.0.1)
+git commit -m "fix: resolve connection timeout issue"
+
+# Minor release (1.0.0 → 1.1.0)
+git commit -m "feat: add support for SSL connections"
+
+# Major release (1.0.0 → 2.0.0)
+git commit -m "feat!: redesign CLI interface
+
+BREAKING CHANGE: Command structure has changed"
+```
+
+### Required Secrets
+
+To enable automated releases, configure these secrets in your GitHub repository:
+- `DOCKER_USERNAME` - Your Docker Hub username
+- `DOCKER_PASSWORD` - Your Docker Hub access token
+
+### Available Image Tags
+
+After a release, Docker images are tagged as:
+- `deploymentking/kafka-utilities:latest` - Always points to the latest release
+- `deploymentking/kafka-utilities:1.2.3` - Specific semantic version
+
