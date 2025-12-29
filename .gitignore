@@ -1,0 +1,3 @@
+# Node modules (if running semantic-release locally)
+node_modules/
+package-lock.json
