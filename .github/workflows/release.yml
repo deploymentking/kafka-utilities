@@ -32,6 +32,10 @@ jobs:
         with:
           node-version: 'lts/*'
 
+      - name: Install conventional-changelog-conventionalcommits
+        id: npm-setup
+        run: npm install conventional-changelog-conventionalcommits
+
       - name: Semantic Release
         id: semantic
         uses: cycjimmy/semantic-release-action@v4
