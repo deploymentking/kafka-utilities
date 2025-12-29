@@ -1,3 +1,13 @@
+## [2.0.0](https://github.com/deploymentking/kafka-utilities/compare/v1.3.0...v2.0.0) (2025-12-29)
+
+### ⚠ BREAKING CHANGES
+
+* this will make ARM64 and AMD64 images
+
+### Features
+
+* update Dockerfile for multple platforms ([cc5f011](https://github.com/deploymentking/kafka-utilities/commit/cc5f0112d1f3a82aa89e07a73f47de002c01e44c))
+
 ## [1.3.0](https://github.com/deploymentking/kafka-utilities/compare/v1.2.0...v1.3.0) (2025-12-29)
 
 ### Features
