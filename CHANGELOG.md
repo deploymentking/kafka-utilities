@@ -1,3 +1,9 @@
+## [1.2.0](https://github.com/deploymentking/kafka-utilities/compare/v1.1.0...v1.2.0) (2025-12-29)
+
+### Features
+
+* add multiple plaforms to the docker build ([f6ea2ff](https://github.com/deploymentking/kafka-utilities/commit/f6ea2ff4eb4878ec19548ccd2c874a2f45187c13))
+
 ## [1.1.0](https://github.com/deploymentking/kafka-utilities/compare/v1.0.0...v1.1.0) (2025-12-29)
 
 ### Features
