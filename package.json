@@ -1,6 +1,6 @@
 {
   "name": "kafka-utilities",
-  "version": "0.0.0-development",
+  "version": "1.3.0",
   "description": "A Docker image containing Go-based Kafka CLI tools: topicctl, kaf, and kafkactl",
   "repository": {
     "type": "git",
@@ -8,5 +8,8 @@
   },
   "author": "deploymentking",
   "license": "MIT",
-  "private": false
+  "private": false,
+  "dependencies": {
+    "conventional-changelog-conventionalcommits": "^9.1.0"
+  }
 }

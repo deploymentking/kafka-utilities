@@ -1,3 +1,9 @@
+## [1.3.0](https://github.com/deploymentking/kafka-utilities/compare/v1.2.0...v1.3.0) (2025-12-29)
+
+### Features
+
+* update release config to include package json ([ec24c1f](https://github.com/deploymentking/kafka-utilities/commit/ec24c1fb9f6aa25bf872baa0cfe700b05ef14cf5))
+
 ## [1.2.0](https://github.com/deploymentking/kafka-utilities/compare/v1.1.0...v1.2.0) (2025-12-29)
 
 ### Features
